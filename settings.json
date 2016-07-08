@@ -1,0 +1,6 @@
+{
+  "private": {
+    "MAIL_URL": "smtp://postmaster%40sandboxbd10bb12657944ed8c43d9b775821746.mailgun.org:8c8d704bb9fd7ec0d95a7e4b6a884d68@smtp.mailgun.org:587",
+    "VIMEO_TOKEN": "762f0e636466ba0d20cc777d1e7fe2d9"
+  }
+}

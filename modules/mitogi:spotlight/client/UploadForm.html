@@ -1,0 +1,11 @@
+<template name ="UploadForm">
+  {{#autoForm collection="Spotlight" id="insertSpotlightForm" type="insert"}}
+    <fieldset>
+
+      {{> afQuickField name='type' value=type}}
+      {{> afArrayField name='links' template='spotlight'}}
+
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+</template>

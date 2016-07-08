@@ -1,0 +1,28 @@
+<template name="AttachmentUpload">
+
+	{{> upload_bootstrap fileTypes='application/msword,application/vnd.ms-excel,application/vnd.ms-powerpoint,text/plain,application/pdf,audio/*video/*image/*' callbacks=attachCallback multiple=true autoStart=true}}
+
+	<div id="uploadResult" {{this.atts}}>
+	    <p>
+	        {{> attachmentInfo filesToUpload }}
+	    </p>
+	</div>
+</template>
+
+
+<template name="attachmentInfo">
+    <div class="documentList">
+        <ul class="list-inline">
+            {{#each this}}
+                <li class="documentItem">       	
+                    <a href="{{filepath}}" download><img src="{{src}}" height="100px" width="100px"></a><br/>
+                    <label>{{ name }}</label> <br/>
+                    {{ size }} B<br>
+                    {{#if _id}}
+                        <a class="btn btn-danger deleteUpload">Delete</a>
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</template>

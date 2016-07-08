@@ -1,0 +1,70 @@
+<template name="VideoUpload">
+	{{#if uploadOption}}
+		{{#if $eq uploadOption 'make'}}
+			<input type="text" name="name" id="videoName" class="form-control" placeholder="Video name" value=""/>
+			{{> lmVideoCapture opts=opts}}
+			<label class="js-saveBtn btn btn-block btn-info">Save</label>
+			<label class="js-cancelBtn btn btn-block btn-info">Back</label>
+		{{else}}
+			{{> UploadVideo}}
+			<label class="js-cancelBtn btn btn-block btn-info">Back</label>
+		{{/if}}
+	{{else}}
+		<label class="js-makeBtn btn btn-block btn-info">Make Videos</label>
+		<label class="js-uploadBtn btn btn-block btn-info" data-action="upload">Upload Videos</label>
+	{{/if}}
+		<input name="vimeo" type="text" value={{uploadDocs}} {{this.atts}}/>
+	{{> videoInfo filesToUpload }}
+</template>
+
+<template name="videoInfo">
+    <div class="documentList">
+        <ul class="list-inline">
+            {{#each this}}
+                <li class="documentItem"> 
+	                <iframe src="{{getPlayer _id filepath}}" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                    <a href="{{filepath}}">
+                    <label>{{ name }}</label></a><br/>
+                    {{ size }} 
+                    {{#if _id}}
+                        <a class="btn btn-danger deleteUpload">Delete</a>
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
+
+
+<template name="UploadVideo">
+	<div id="progress-container" class="progress">
+        <div id="progress" class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100" style="width: 0%">&nbsp;0%
+        </div>
+    </div>
+
+    <div id="results"></div>
+     
+    <input type="text" id="accessToken" class="form-control" placeholder="Vimeo access token" required value="762f0e636466ba0d20cc777d1e7fe2d9"/>
+   
+
+    <input type="text" name="name" id="videoName" class="form-control" placeholder="Video name" value=""/>
+
+
+    <input type="text" name="description" id="videoDescription" class="form-control" placeholder="Video description" value=""/>
+
+
+    Upgrade to 1080  <input type="checkbox" id="upgrade_to_1080" name="upgrade_to_1080"/>
+
+
+
+    Make Private <input type="checkbox" id="make_private" name="make_private" />
+  
+        
+   
+    <div id="drop_zone">Drop Files Here</div>
+    <br/>
+    <label class="btn btn-block btn-info">
+        Browse&hellip; <input id="browse" type="file" style="display: none;" class="myFileInput">
+    </label>
+</template>

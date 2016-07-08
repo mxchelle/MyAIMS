@@ -1,0 +1,18 @@
+<template name="afMakeVideo">
+	{{#if uploadOption}}
+		{{#if $eq uploadOption 'make'}}
+			<input type="text" name="name" id="videoName" class="form-control" placeholder="Video name" value=""/>
+			{{> lmVideoCapture opts=opts}}
+			<label class="js-saveBtn btn btn-block btn-info">Save</label>
+			<label class="js-cancelBtn btn btn-block btn-info">Back</label>
+		{{else}}
+			{{> uploadVideo}}
+			<label class="js-cancelBtn btn btn-block btn-info">Back</label>
+		{{/if}}
+	{{else}}
+		<label class="js-makeBtn btn btn-block btn-info">Make Videos</label>
+		<label class="js-uploadBtn btn btn-block btn-info" data-action="upload">Upload Videos</label>
+	{{/if}}
+		<input name="vimeo" type="text" value={{uploadDocs}} {{this.atts}}/>
+
+</template>

@@ -1,0 +1,31 @@
+<template name="PhotoUpload">
+	<label id="cameraPicture">Picture From Camera</label>	
+	<label id="uploadPicture">Upload Pictures</label>
+
+	{{#if uploadPicsOption}}
+		{{> upload_bootstrap fileTypes='image/*,video/*' callbacks=myCallbacks multiple=true autoStart=autoStart}}
+	{{/if}}
+
+	<div id="uploadResult" {{this.atts}}>
+	    <p>
+	        {{> photoInfo filesToUpload }}
+	    </p>
+	</div>
+</template>
+
+<template name="photoInfo">
+    <div class="documentList">
+        <ul class="list-inline">
+            {{#each this}}
+                <li class="documentItem">           
+                    <a href="{{filepath}}"><img src="{{filepath}}" height="100px" width="100px"></a><br/>
+                    <label>{{ name }}</label> <br/>
+                    {{ size }} B<br>
+                    {{#if _id}}
+                        <a class="btn btn-danger deleteUpload">Delete</a>
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</template>

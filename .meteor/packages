@@ -1,0 +1,77 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+ryw:blog
+twbs:bootstrap
+accounts-password
+accounts-base
+ian:accounts-ui-bootstrap-3
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+standard-minifier-css
+standard-minifier-js
+fastclick
+
+kadira:flow-router
+kadira:blaze-layout
+raix:handlebar-helpers
+
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+
+aldeed:collection2
+aldeed:template-extension
+aldeed:autoform
+
+meteorhacks:ssr
+themeteorchef:bert
+#browser-policy
+#audit-argument-checks
+themeteorchef:jquery-validation
+ecmascript
+digilord:faker
+#meteorhacks:fast-render
+templating
+fourseven:scss
+
+stevezhu:lodash
+reactive-dict
+
+meteorhacks:npm
+
+meteortoys:allthings
+
+reactive-var            # Reactive variable for tracker
+manuel:reactivearray
+
+alanning:roles
+email
+momentjs:moment
+
+mdg:camera
+lukemadera:video-capture
+tomi:upload-server
+tomi:upload-jquery
+
+andruschka:bootstrap-image-gallery
+
+

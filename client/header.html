@@ -1,0 +1,22 @@
+<template name="header">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">Meteor Blog Example</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a href="{{blogPathFor "blogIndex"}}">Blog</a>
+          </li>
+          <li>
+            <a href="{{blogPathFor "blogAdmin"}}">Admin Area (must login)</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{> loginButtons}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>

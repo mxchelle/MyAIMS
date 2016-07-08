@@ -1,0 +1,28 @@
+<template name="SpotlightUpload">
+			<button class="resource-select" value="Video">Videos</button>
+			<section>
+				{{> VideoUpload spotlightData=spotlightData}}
+			</section>
+			<button class="resource-select" value="Photo">Gallery</button>
+			<section>
+				{{> PhotoUpload spotlightData=spotlightData}}
+			</section>
+			<button class="resource-select" value="Attachment">Attachments</button>
+			<section>
+				{{> AttachmentUpload spotlightData=spotlightData}}
+			</section>
+			<input type="hidden" name="spot_submit" value=""/>
+</template>
+
+
+<template name="ogSpotlightUpload">
+	<!--{{#if spotlightType}}	
+		{{> Template.dynamic template=templateType data=spotlightData}}
+		<button class="btn btn-primary" id="backToStart">Back</button>
+	{{else}}
+		<button class="resource-select" value="Video">Videos</button>
+		<section>
+		<button class="resource-select" value="Photo">Gallery</button>
+		<button class="resource-select" value="Attachment">Attachments</button>
+	{{/if}}-->
+</template>

@@ -1,0 +1,28 @@
+<template name="afMyFileUpload">
+  {{> upload_bootstrap callbacks=myCallbacks multiple=true autoStart=autoStart}}
+  <div id="uploadResult" {{this.atts}}>
+    <p>
+        {{> uploadedInfo filesToUpload }}
+    </p>
+</div>
+</template>
+
+
+<template name="uploadedInfo">
+    <div class="documentList">
+        <ul class="list-inline">
+            {{#each this}}
+                <li class="documentItem">
+                	<input type="hidden" value="{{url}}" class="data-field" id="{{name}}"/>
+                	
+                    <a href="{{url}}"><img src="{{url}}" height="100px" width="100px"></a><br/>
+                    <label>{{ name }}</label> <br/>
+                    {{ size }} B<br>
+                    {{#if _id}}
+                        <a class="btn btn-danger deleteUpload">Delete</a>
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
